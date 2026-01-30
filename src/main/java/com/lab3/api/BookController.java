@@ -27,4 +27,9 @@ public class BookController {
     public Book createBook(@PathVariable Long libraryId, @RequestBody Book book) {
         return bookService.createBook(libraryId, book);
     }
+
+    @DeleteMapping("/books/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+    }
 }

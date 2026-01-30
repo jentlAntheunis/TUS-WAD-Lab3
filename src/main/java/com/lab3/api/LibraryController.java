@@ -30,7 +30,7 @@ public class LibraryController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteLibrary(@PathVariable Long id) {
-        libraryService.deleteLibrary(id);
+    public String deleteLibrary(@PathVariable Long id) {
+        return libraryService.deleteLibraryIfEmpty(id);
     }
 }

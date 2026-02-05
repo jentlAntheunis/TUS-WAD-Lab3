@@ -7,6 +7,7 @@ import com.lab3.repository.LibraryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class BookService {
@@ -33,6 +34,7 @@ public class BookService {
     public Book createBook(Long libraryId, Book book) {
         Library library = libraryRepository.getReferenceById(libraryId);
         book.setLibrary(library);
+        if (Objects.equals(book.getTitle(), "") || Objects.equals(book.getTitle(), null)) {return null;}
         return bookRepository.save(book);
     }
 

@@ -6,7 +6,7 @@ plugins {
 
 group = 'com'
 version = '0.0.1-SNAPSHOT'
-description = 'lab3_2'
+description = 'lab3'
 
 java {
     toolchain {
